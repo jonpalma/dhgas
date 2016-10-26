@@ -282,6 +282,11 @@ a {
     bottom: -50px;
 }
 
+.index .noticias a {
+    text-decoration: none!important;
+    outline: none!important;
+}
+
 .index .noticias .carousel .img-container {
     position: relative;
     height: 300px;
@@ -296,32 +301,6 @@ a {
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
-}
-
-.index .noticias .carousel .img-container::after {
-    position: absolute;
-    display: block;
-    content: '';
-    right: 14px;
-    bottom: 14px;
-    height: 28px;
-    width: 28px;
-    background-color: transparent;
-    background: url(img/index/icons/more.png) no-repeat center center;
-    background-size: cover;
-    pointer-events: none;
-}
-
-.index .noticias .carousel .img-container a::after {
-    position: absolute;
-    display: block;
-    content: '';
-    right: -75px;
-    bottom: -75px;
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    background-color: rgba(0, 144, 83, 1);
 }
 
 .index .noticias .carousel .carousel-inner {
@@ -354,6 +333,7 @@ a {
 .index .noticias .carousel .col-sm-4 h3 {
     font-weight: 700;
     font-size: 20px;
+    color: rgba(50, 50, 50, 1);
     height: 46px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -390,15 +370,31 @@ a {
 }
 
 .index .noticias .blog {
+    
     margin-top: 50px;
 }
 
 .index .noticias .blog a {
+    display: block;
     font-weight: 700;
     font-size: 22px;
     color: rgba(0, 144, 83, 1);
+    line-height: 40px;
+    height: 40px;
+    width: 180px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 144, 83, 1);
     text-decoration: none!important;
     outline: none!important;
+    transition: all 300ms ease;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+}
+
+.index .noticias .blog a:hover {
+    background-color: rgba(180, 180, 180, 1);
 }
 
 
@@ -763,6 +759,18 @@ a {
     width: 15px;
     background-color: rgba(0, 144, 83, 1);
     border-radius: 50%;
+}
+
+.index .servicios .container .imagenes .middle-row .right-side .top,
+.index .servicios .container .imagenes .middle-row .right-side .middle,
+.index .servicios .container .imagenes .middle-row .right-side .bottom {
+    margin-left: 25px;
+}
+
+.index .servicios .container .imagenes .middle-row .left-side .top,
+.index .servicios .container .imagenes .middle-row .left-side .middle,
+.index .servicios .container .imagenes .middle-row .left-side .bottom {
+    margin-right: 25px;
 }
 
 

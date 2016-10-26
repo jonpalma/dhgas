@@ -49,7 +49,10 @@
     <!--/* NOTICIAS */-->
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <div class="noticias" id="noticias">
+    <div class="noticias parallax-container" id="noticias">
+       <div class="parallax">
+            <img src="<?php echo bloginfo('template_url').'/'; ?>img/index/noticias/bg.png" alt="Parallax">
+        </div>
         <div class="container light-spacing">
             <h1>
                 <?php echo CFS()-> get('noticias_title'); ?>
@@ -81,13 +84,13 @@
                                 echo '<div class="item">';
                             }
                     ?>
-                    <div class="col-sm-4">
-                        <div class="img-container">
-                            <img src="<?php echo the_post_thumbnail_url(); ?>" alt="">
-                            <a href="<?php echo the_permalink();?>"></a>
-                        </div>
-                        <h3>
-                            <?php
+                    <a href="<?php echo the_permalink();?>">
+                        <div class="col-sm-4">
+                            <div class="img-container">
+                                <img src="<?php echo the_post_thumbnail_url(); ?>" alt="">
+                            </div>
+                            <h3>
+                                <?php
                             if (strlen($post->post_title) > 30)
                             { 
                                 echo substr(the_title($before = '', $after = '', FALSE), 0, 30) . ' [...]'; 
@@ -96,13 +99,13 @@
                             {
                                 the_title();
                             }
-                            ?>
-                        </h3>
-                        <p class="date">
-                            <?php echo get_the_date('d-m-Y'); ?>
-                        </p>
-                        <p class="text">
-                            <?php
+                                ?>
+                            </h3>
+                            <p class="date">
+                                <?php echo get_the_date('d-m-Y'); ?>
+                            </p>
+                            <p class="text">
+                                <?php
                             if ( strlen(get_the_content()) > 80)
                             {
                                 echo substr(get_the_content(), 0,80).' [...]';
@@ -111,9 +114,10 @@
                             {
                                 echo get_the_content();
                             }
-                            ?>
-                        </p>
-                    </div>
+                                ?>
+                            </p>
+                        </div>
+                    </a>
                     <?php
                             $counter++;
                         }
@@ -180,7 +184,9 @@
                         </div>
                     </div>
                     <div class="col-sm-6 hidden-xs">
-                        <img src="<?php echo bloginfo('template_url').'/'; ?>img/index/servicios/central.png" alt="">
+                        <div class="img-container">
+                            <img src="<?php echo bloginfo('template_url').'/'; ?>img/index/servicios/central.png" alt="">
+                        </div>
                     </div>
                     <div class="col-sm-2 col-xs-6 right-side">
                         <div class="top">
@@ -426,7 +432,7 @@
                         </a>
                     </p>
                     <p class="map">
-                        Ubicación fiscal:<br/>
+                        Datos fiscales:<br/>
                         <?php echo $estacion['estacion_ubicacion_fiscal']; ?>
                     </p>
                 </div>
