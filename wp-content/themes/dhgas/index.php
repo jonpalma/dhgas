@@ -13,7 +13,9 @@
             </h1>
             <div class="bottom-bar">
                 <div class="col-xs-4 ">
-                    <img src="<?php echo bloginfo('template_url').'/'; ?>img/index/icons/magna-bg.png" alt="">
+                    <div class="img-container">
+                        <img src="<?php echo bloginfo('template_url').'/'; ?>img/index/icons/magna-bg.png" alt="">
+                    </div>
                     <p>
                         <?php echo CFS()-> get('magna_price'); ?>
                     </p>
@@ -85,10 +87,31 @@
                             <a href="<?php echo the_permalink();?>"></a>
                         </div>
                         <h3>
-                            <?php echo get_the_title(); ?>
+                            <?php
+                            if (strlen($post->post_title) > 30)
+                            { 
+                                echo substr(the_title($before = '', $after = '', FALSE), 0, 30) . ' [...]'; 
+                            }
+                            else
+                            {
+                                the_title();
+                            }
+                            ?>
                         </h3>
-                        <p>
+                        <p class="date">
                             <?php echo get_the_date('d-m-Y'); ?>
+                        </p>
+                        <p class="text">
+                            <?php
+                            if ( strlen(get_the_content()) > 80)
+                            {
+                                echo substr(get_the_content(), 0,80).' [...]';
+                            }
+                            else
+                            {
+                                echo get_the_content();
+                            }
+                            ?>
                         </p>
                     </div>
                     <?php
@@ -105,6 +128,11 @@
                 </a>
                 <a class="right carousel-control" href="#carousel-noticias" role="button" data-slide="next">
                     <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="blog">
+                <a href="blog">
+                    Ver más
                 </a>
             </div>
         </div>
@@ -383,21 +411,23 @@
                         <?php echo $estacion['estacion_name']; ?>
                     </h2>
                     <p class="ubicacion">
-                        <?php echo $estacion['estacion_address']; ?>
+                        <a>
+                            <?php echo $estacion['estacion_address']; ?>
+                        </a>
                     </p>
                     <p class="telefono">
+                        Tel:
                         <?php echo $estacion['estacion_phone']; ?>
                     </p>
                     <p class="email">
-                        e-mail:
+                        E-mail:
                         <a href="mailto:<?php echo $estacion['estacion_email']; ?>">
                             <?php echo $estacion['estacion_email']; ?>
                         </a>
                     </p>
                     <p class="map">
-                        <a>
-                            Ubicación fiscal
-                        </a>
+                        Ubicación fiscal:<br/>
+                        <?php echo $estacion['estacion_ubicacion_fiscal']; ?>
                     </p>
                 </div>
                 <?php
@@ -412,43 +442,7 @@
     <!--/* CONTACTO */-->
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <div class="contacto parallax-container" id="contacto">
-        <div class="parallax">
-            <img src="<?php echo bloginfo('template_url').'/'; ?>img/index/nosotros/bg.jpg" alt="Parallax">
-        </div>
-        <div class="container light-spacing">
-            <h1>
-                <?php echo CFS()-> get('contacto_title'); ?>
-            </h1>
-            <div class="contenido">
-                <div class="col-sm-2 hidden-xs"></div>
-                <div class="col-sm-3 col-xs-5">
-                    <div class="img-container top">
-                        <a class="smoothScroll" href="#index">
-                            <img src="<?php echo CFS()-> get('contacto_logo'); ?>" alt="">
-                        </a>
-                    </div>
-                    <div class="middle">
-                        <p>
-                            <?php echo CFS()-> get('contacto_text'); ?>
-                        </p>
-                    </div>
-                    <div class="bottom">
-                        <a href="<?php echo CFS()-> get('contacto_link_fb'); ?>">
-                            <img src="<?php echo bloginfo('template_url').'/'; ?>img/index/social/fb.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-7 col-xs-7">
-                    <div class="form-container">
-                        <form action="" method="POST" id="contact-form">
-                            <?php echo do_shortcode('[contact-form-7 id="4" title="Formulario Index Contacto"]'); ?>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php include('contacto.php'); ?>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
     <!--/**********************************/-->

@@ -21,20 +21,20 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="<?php if($page != 'index') { echo 'index.php'; }?>#index" class="smoothScroll nav-logo">
+                    <a href="<?php if($page != 'index') { echo 'index'; }?>#index" class="smoothScroll nav-logo">
                         <img src="<?php echo bloginfo('template_url').'/'; ?>img/index/icons/logo.png" alt="logo">
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="<?php if($page != 'index') { echo 'index.php'; }?>#index" class="smoothScroll vertical-align nav-padd">INICIO</a></li>
-                        <li><a href="<?php if($page != 'index') { echo 'index.php'; }?>#noticias" class="smoothScroll vertical-align nav-padd">NOTICIAS</a></li>
-                        <li><a href="<?php if($page != 'index') { echo 'index.php'; }?>#servicios" class="smoothScroll vertical-align nav-padd">SERVICIOS</a></li>
-                        <li><a href="<?php if($page != 'index') { echo 'index.php'; }?>#pago" class="smoothScroll vertical-align nav-padd">FORMAS DE PAGO</a></li>
-                        <li><a href="<?php if($page != 'index') { echo 'index.php'; }?>#nosotros" class="smoothScroll vertical-align nav-padd">NOSOTROS</a></li>
-                        <li><a href="<?php if($page != 'index') { echo 'index.php'; }?>#estaciones" class="smoothScroll vertical-align nav-padd">ESTACIONES</a></li>
-                        <li><a href="<?php if($page != 'index') { echo 'index.php'; }?>#contacto" class="smoothScroll vertical-align nav-padd">CONTACTO</a></li>
-                        <li class="nav-factura"><a href="<?php if($page != 'index') { echo 'index.php'; }?>#" class="smoothScroll vertical-align nav-padd">FACTURA EN LÍNEA</a></li>
+                        <li><a href="<?php if($page != 'index') { echo 'index'; }?>#index" class="smoothScroll vertical-align nav-padd">INICIO</a></li>
+                        <li><a href="<?php if($page != 'index') { echo 'index'; }?>#noticias" class="smoothScroll vertical-align nav-padd">NOTICIAS</a></li>
+                        <li><a href="<?php if($page != 'index') { echo 'index'; }?>#servicios" class="smoothScroll vertical-align nav-padd">SERVICIOS</a></li>
+                        <li><a href="<?php if($page != 'index') { echo 'index'; }?>#pago" class="smoothScroll vertical-align nav-padd">FORMAS DE PAGO</a></li>
+                        <li><a href="<?php if($page != 'index') { echo 'index'; }?>#nosotros" class="smoothScroll vertical-align nav-padd">NOSOTROS</a></li>
+                        <li><a href="<?php if($page != 'index') { echo 'index'; }?>#estaciones" class="smoothScroll vertical-align nav-padd">ESTACIONES</a></li>
+                        <li><a href="<?php if($page != 'index') { echo 'index'; }?>#contacto" class="smoothScroll vertical-align nav-padd">CONTACTO</a></li>
+                        <li class="nav-factura"><a href="<?php if($page != 'index') { echo 'index'; }?>#" class="smoothScroll vertical-align nav-padd">FACTURA EN LÍNEA</a></li>
                     </ul>
                 </div>
             </div>
