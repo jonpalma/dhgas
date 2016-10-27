@@ -16,7 +16,7 @@
             <div class="col-sm-2 hidden-xs"></div>
             <div class="col-sm-3 col-xs-5">
                 <div class="img-container top">
-                    <a class="smoothScroll" href="#index">
+                    <a class="smoothScroll" href="<?php if($page != 'index') { echo 'index'; }?>#index">
                         <img src="<?php echo bloginfo('template_url').'/'; ?>img/index/icons/logo.png" alt="">
                     </a>
                 </div>
@@ -26,7 +26,7 @@
                     </p>
                 </div>
                 <div class="bottom">
-                    <a href="">
+                    <a target="_blank" href="https://www.facebook.com/">
                         <img src="<?php echo bloginfo('template_url').'/'; ?>img/index/social/fb.png" alt="">
                     </a>
                 </div>

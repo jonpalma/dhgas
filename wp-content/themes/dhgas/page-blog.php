@@ -44,39 +44,40 @@
                 echo '<div class="row">';
             }
             ?>
-            <div class="col-sm-4">
-                <div class="img-container">
-                    <img src="<?php echo the_post_thumbnail_url(); ?>" alt="">
-                    <a href="<?php echo the_permalink();?>"></a>
+            <a href="<?php echo the_permalink();?>">
+                <div class="col-sm-4">
+                    <div class="img-container">
+                        <img src="<?php echo the_post_thumbnail_url(); ?>" alt="">
+                    </div>
+                    <h3>
+                        <?php
+                        if (strlen($post->post_title) > 30)
+                        { 
+                            echo substr(the_title($before = '', $after = '', FALSE), 0, 30) . ' [...]'; 
+                        }
+                        else
+                        {
+                            the_title();
+                        }
+                        ?>
+                    </h3>
+                    <p class="date">
+                        <?php echo get_the_date('d-m-Y'); ?>
+                    </p>
+                    <p class="text">
+                        <?php
+                        if ( strlen(get_the_content()) > 80)
+                        {
+                            echo substr(get_the_content(), 0,80).' [...]';
+                        }
+                        else
+                        {
+                            echo get_the_content();
+                        }
+                        ?>
+                    </p>
                 </div>
-                <h3>
-                    <?php
-                    if (strlen($post->post_title) > 30)
-                    { 
-                        echo substr(the_title($before = '', $after = '', FALSE), 0, 30) . ' [...]'; 
-                    }
-                    else
-                    {
-                        the_title();
-                    }
-                    ?>
-                </h3>
-                <p class="date">
-                    <?php echo get_the_date('d-m-Y'); ?>
-                </p>
-                <p class="text">
-                    <?php
-                    if ( strlen(get_the_content()) > 80)
-                    {
-                        echo substr(get_the_content(), 0,80).' [...]';
-                    }
-                    else
-                    {
-                        echo get_the_content();
-                    }
-                    ?>
-                </p>
-            </div>
+            </a>
             <?php 
             $counter++;
             if($counter%3 == 0 || $counter == $the_query->post_count)
