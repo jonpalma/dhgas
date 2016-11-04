@@ -83,10 +83,10 @@ a {
     z-index: 99;
 }
 
-.navbar .nav-factura a {
+.navbar .nav-factura .dropdown-toggle {
     font-size: 11px;
     border-radius: 5px;
-    background-color: rgba(44, 160, 111, 1);
+    background-color: rgba(44, 160, 111, 1)!important;
 }
 
 .navbar .container-fluid {
@@ -137,7 +137,7 @@ a {
     color: rgba(0, 145, 80, 1)!important;
 }
 
-.navbar .nav-factura:hover a {
+.navbar .nav-factura:hover .dropdown-toggle {
     background-color: rgba(44, 160, 111, 1)!important;
     color: rgba(183, 3, 38, 1)!important;
 }
@@ -149,6 +149,35 @@ a {
 .navbar .nav-logo img {
     margin-top: 10px;
     height: 60px;
+}
+
+.navbar .dropdown {
+    background-color: transparent;
+}
+
+.navbar-nav > li > .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 89px;
+    left: auto;
+    right: 0;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 5px 10px;
+    color: rgba(255, 255, 255, 1)!important;
+    border: 1px solid transparent;
+    transition: all 300ms ease;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li:hover > a {
+    background-color: transparent!important;
+    color: rgba(0, 145, 80, 1)!important;
 }
 
 
@@ -886,6 +915,8 @@ a {
     transition: all 300ms ease;
     -webkit-transition: all 300ms ease;
     -moz-transition: all 300ms ease;
+
+    cursor: pointer;
 }
 
 .index .estaciones .contenido a:hover {
@@ -922,6 +953,8 @@ a {
 .index .estaciones .contenido .ubicacion::before {
     background: url(img/index/icons/ubicacion.png) no-repeat center center;
     background-size: cover;
+
+    cursor: pointer;
 }
 
 .index .estaciones .contenido .telefono::before {
@@ -946,15 +979,19 @@ a {
 }
 
 .index .estaciones .contenido .img-container::after {
+    content: '';
     right: -75px;
     bottom: -75px;
     height: 150px;
     width: 150px;
     border-radius: 50%;
     background-color: rgba(0, 144, 83, 1);
+
+    cursor: pointer;
 }
 
 .index .estaciones .contenido .img-container::before {
+    content: '';
     right: 13px;
     bottom: 13px;
     height: 34px;
@@ -962,6 +999,8 @@ a {
     background: url(img/index/icons/marker.png) no-repeat center center;
     background-size: cover;
     z-index: 1;
+
+    cursor: pointer;
 }
 
 .index .estaciones .contenido .img-container .img-inner {
@@ -989,6 +1028,8 @@ a {
     border-radius: 50%;
     background-color: transparent;
     z-index: 1;
+
+    cursor: pointer;
 }
 
 .index .estaciones .contenido .img-container .googleMap {
@@ -1668,7 +1709,7 @@ footer .footer-rights a:hover {
         background-color: transparent!important;
         color: rgba(0, 145, 80, 1)!important;
     }
-    .navbar .nav-factura:hover a {
+    .navbar .nav-factura:hover .dropdown-toggle {
         background-color: rgba(44, 160, 111, 1)!important;
         color: rgba(183, 3, 38, 1)!important;
     }
@@ -1708,7 +1749,7 @@ footer .footer-rights a:hover {
         background-color: transparent!important;
         color: rgba(0, 145, 80, 1)!important;
     }
-    .navbar .nav-factura:hover a {
+    .navbar .nav-factura:hover .dropdown-toggle {
         background-color: rgba(44, 160, 111, 1)!important;
         color: rgba(183, 3, 38, 1)!important;
     }
@@ -1778,6 +1819,14 @@ footer .footer-rights a:hover {
     .navbar .nav-logo img {
         margin-top: 15px;
         height: 50px;
+    }
+    .navbar-nav > li > .dropdown-menu {
+        text-align: center;
+        top: 0;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        font-size: 12px;
+        padding: 2px 0px;
     }
 
 

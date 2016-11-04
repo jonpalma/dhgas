@@ -34,7 +34,15 @@
                         <li><a href="<?php if($page != 'index') { echo 'index'; }?>#nosotros" class="smoothScroll vertical-align nav-padd">NOSOTROS</a></li>
                         <li><a href="<?php if($page != 'index') { echo 'index'; }?>#estaciones" class="smoothScroll vertical-align nav-padd">ESTACIONES</a></li>
                         <li><a href="<?php if($page != 'index') { echo 'index'; }?>#contacto" class="smoothScroll vertical-align nav-padd">CONTACTO</a></li>
-                        <li class="nav-factura"><a href="" class="smoothScroll vertical-align nav-padd">FACTURA EN LÍNEA</a></li>
+                        <li class="dropdown nav-factura">
+                            <a class="dropdown-toggle vertical-align" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FACTURA EN LÍNEA <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a target="" href="">E6794 - Meoqui Matriz Diamante</a></li>
+                                <li><a target="" href="">E11972 - Suc. Aeropuerto</a></li>
+                                <li><a target="" href="">E12949 - Suc. Algodoneros</a></li>
+                                <li><a target="_blank" href="http://gasde9678.bounceme.net:90/">E9678 - Suc. La Sierrita</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
